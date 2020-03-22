@@ -1,0 +1,43 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 275
+  Height = 264
+  Top = 250
+  Width = 477
+  Caption = 'Exemplo Pesquisa'
+  ClientHeight = 264
+  ClientWidth = 477
+  Position = poDesktopCenter
+  object btnCliente: TButton
+    Left = 33
+    Height = 25
+    Top = 44
+    Width = 75
+    Caption = 'Cliente'
+    OnClick = btnClienteClick
+    TabOrder = 0
+  end
+  object edtResultado: TEdit
+    Left = 230
+    Height = 25
+    Top = 41
+    Width = 218
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 232
+    Height = 17
+    Top = 24
+    Width = 55
+    Caption = 'Resultado'
+    ParentColor = False
+  end
+  object btnFornecedor: TButton
+    Left = 39
+    Height = 25
+    Top = 102
+    Width = 75
+    Caption = 'Fornecedor'
+    OnClick = btnFornecedorClick
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,133 @@
+object frmPesquisa: TfrmPesquisa
+  Left = 325
+  Height = 381
+  Top = 169
+  Width = 771
+  Caption = 'pesquisa'
+  ClientHeight = 381
+  ClientWidth = 771
+  Color = 6973961
+  Position = poDesktopCenter
+  LCLVersion = '2.0.6.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 287
+    Top = 94
+    Width = 771
+    Align = alBottom
+    AlternateColor = clSkyBlue
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+    TabOrder = 0
+    OnDblClick = DBGrid1DblClick
+  end
+  object cbCampos: TComboBox
+    Left = 24
+    Height = 29
+    Top = 42
+    Width = 208
+    ItemHeight = 0
+    TabOrder = 1
+    Text = 'cbCampos'
+  end
+  object cbFiltro: TComboBox
+    Left = 240
+    Height = 29
+    Top = 42
+    Width = 136
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      'parte'
+      'igual'
+      'inicio'
+    )
+    TabOrder = 2
+    Text = 'parte'
+  end
+  object edtBusca: TEdit
+    Left = 384
+    Height = 29
+    Top = 42
+    Width = 192
+    TabOrder = 3
+  end
+  object btnPesquisa: TButton
+    Left = 592
+    Height = 56
+    Top = 24
+    Width = 75
+    Caption = 'Pesquisa'
+    OnClick = btnPesquisaClick
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 25
+    Height = 17
+    Top = 25
+    Width = 187
+    Caption = 'Selecione o campo para pesquisa'
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 243
+    Height = 17
+    Top = 25
+    Width = 55
+    Caption = 'Tipo Filtro'
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 388
+    Height = 17
+    Top = 23
+    Width = 85
+    Caption = 'O que procura?'
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+  end
+  object edtResultado: TEdit
+    Left = 516
+    Height = 29
+    Top = 9
+    Width = 80
+    Enabled = False
+    TabOrder = 5
+    Visible = False
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Catalog = 'aula_mysql'
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'aula_mysql'
+    User = 'root'
+    Password = 'Info@3004'
+    Protocol = 'mysql'
+    left = 64
+    top = 88
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    left = 24
+    top = 128
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 144
+    top = 120
+  end
+end
